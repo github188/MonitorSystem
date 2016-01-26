@@ -1,0 +1,218 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\ACSSystem.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "ACSSystem.dll"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "ACSSystem.dll"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ACSSYSTEM_DIALOG DIALOGEX 0, 0, 506, 473
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "子系统选择：",IDC_STATIC_SUBSYSTEM,183,45,52,8,NOT WS_VISIBLE
+    CONTROL         "全部",IDC_CHECK_ALL_SUBSYSTEM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,168,22,33,10
+    CONTROL         "安防",IDC_CHECK_SECURITY_SYSTEM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,315,29,33,10
+    CONTROL         "消防",IDC_CHECK_FIRE_SYSTEM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,362,25,33,10
+    LTEXT           "遥信设备：",IDC_STATIC_YX_DEVICE,135,86,44,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_LIST_YX_DEVICE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,187,81,74,31
+    PUSHBUTTON      "上",IDC_BUTTON_UP,325,53,50,14
+    PUSHBUTTON      "左",IDC_BUTTON_LEFT,287,95,50,14
+    PUSHBUTTON      "锁",IDC_BUTTON_LOCK,348,89,50,14
+    PUSHBUTTON      "右",IDC_BUTTON_RIGHT,409,83,50,14
+    PUSHBUTTON      "下",IDC_BUTTON_DOWN,359,119,50,14
+    PUSHBUTTON      "拉近",IDC_BUTTON_ZOOM_IN,252,224,50,14
+    PUSHBUTTON      "拉远",IDC_BUTTON_ZOOM_OUT,377,231,50,14
+    LTEXT           "云台速度：",IDC_STATIC_YT_SPEED,319,168,44,8
+    COMBOBOX        IDC_COMBO_YT_SPEED,371,173,48,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "门禁",IDC_CHECK_DOOR_SYSTEM,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,267,23,33,10
+    CONTROL         "",IDC_TREE_STATION,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | WS_BORDER | WS_HSCROLL | WS_TABSTOP,41,185,138,83
+    LTEXT           "变电站列表",IDC_STATIC_STATION,20,31,41,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC_ELECMAP,"Static",SS_BLACKFRAME,238,206,215,73
+END
+
+IDD_DIALOG_VIEW_OUT DIALOGEX 0, 0, 317, 184
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "静态",IDC_STATIC_CAMERA_NAME,39,18,18,8
+    LTEXT           "告警详细信息:",IDC_STATIC_ALARM_INFO,81,15,55,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ACSSYSTEM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 499
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 466
+    END
+
+    IDD_DIALOG_VIEW_OUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_TITLE        BITMAP                  "pic\\视频窗口顶部横条.bmp"
+IDB_BITMAP_VIDEO_BG     BITMAP                  "pic\\视频背景图.bmp"
+IDB_BITMAP_TREE         BITMAP                  "pic\\bitmap_t.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_YTDOWN       CURSOR                  "res\\ytdown.cur"
+IDC_CURSOR_YTDOWN_ON    CURSOR                  "res\\ytdownon.cur"
+IDC_CURSOR_YTLEFT       CURSOR                  "res\\ytlefton.cur"
+IDC_CURSOR_YTLEFT_ON    CURSOR                  "res\\ytleft.cur"
+IDC_CURSOR_YTRIGHT      CURSOR                  "res\\ytrighton.cur"
+IDC_CURSOR_YTRIGHT_ON   CURSOR                  "res\\ytright.cur"
+IDC_CURSOR_YTUP         CURSOR                  "res\\ytupon.cur"
+IDC_CURSOR_YTUP_ON      CURSOR                  "res\\ytup.cur"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\ACSSystem.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
