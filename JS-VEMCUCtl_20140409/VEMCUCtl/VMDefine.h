@@ -1,0 +1,17 @@
+#ifndef _VM_DEFINE_H_
+#define _VM_DEFINE_H_
+
+//////////////////////////////////////////////////////////////////////////
+//版本
+#define VM_DKY_CLIENT_VERSION  0  //作为电科院客户端
+#define VM_SD_CLIENT_VERSION 1    //作为省调客户端
+#define VM_SJ_CLIENT_VERSION  0    //作为省检客户端
+#define VM_SERVER_VERSION 0         //作为后台
+#define VM_QABD_CLIENT_VERSION 0   //作为青奥保电
+//////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////
+#define VM_VIDEO_VIEW_REPORT_ONLY_EXPORT_500KV  1  //视频巡视只导出500kV站点
+
+
+#endif
