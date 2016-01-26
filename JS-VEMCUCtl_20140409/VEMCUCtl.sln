@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VEMCUCtl", "VEMCUCtl\VEMCUCtl.vcproj", "{B04D63FB-7407-48FB-B5D9-0F444A324972}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F01400E-8575-4631-9815-EABED82802A0} = {1F01400E-8575-4631-9815-EABED82802A0}
+		{08A1F3D9-A932-4F64-9A12-CB1A5141E18E} = {08A1F3D9-A932-4F64-9A12-CB1A5141E18E}
+		{162F24FE-5D3A-49B3-BB54-4120B35AB9CE} = {162F24FE-5D3A-49B3-BB54-4120B35AB9CE}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDDElecMap", "SDDElecMap\SDDElecMap.vcproj", "{162F24FE-5D3A-49B3-BB54-4120B35AB9CE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ACSSystem", "ACSSystem\ACSSystem.vcproj", "{08A1F3D9-A932-4F64-9A12-CB1A5141E18E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkageSetting", "LinkageSetting\LinkageSetting.vcproj", "{1F01400E-8575-4631-9815-EABED82802A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B04D63FB-7407-48FB-B5D9-0F444A324972}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B04D63FB-7407-48FB-B5D9-0F444A324972}.Debug|Win32.Build.0 = Debug|Win32
+		{B04D63FB-7407-48FB-B5D9-0F444A324972}.Release|Win32.ActiveCfg = Release|Win32
+		{B04D63FB-7407-48FB-B5D9-0F444A324972}.Release|Win32.Build.0 = Release|Win32
+		{162F24FE-5D3A-49B3-BB54-4120B35AB9CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{162F24FE-5D3A-49B3-BB54-4120B35AB9CE}.Debug|Win32.Build.0 = Debug|Win32
+		{162F24FE-5D3A-49B3-BB54-4120B35AB9CE}.Release|Win32.ActiveCfg = Release|Win32
+		{162F24FE-5D3A-49B3-BB54-4120B35AB9CE}.Release|Win32.Build.0 = Release|Win32
+		{08A1F3D9-A932-4F64-9A12-CB1A5141E18E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{08A1F3D9-A932-4F64-9A12-CB1A5141E18E}.Debug|Win32.Build.0 = Debug|Win32
+		{08A1F3D9-A932-4F64-9A12-CB1A5141E18E}.Release|Win32.ActiveCfg = Release|Win32
+		{08A1F3D9-A932-4F64-9A12-CB1A5141E18E}.Release|Win32.Build.0 = Release|Win32
+		{1F01400E-8575-4631-9815-EABED82802A0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F01400E-8575-4631-9815-EABED82802A0}.Debug|Win32.Build.0 = Debug|Win32
+		{1F01400E-8575-4631-9815-EABED82802A0}.Release|Win32.ActiveCfg = Release|Win32
+		{1F01400E-8575-4631-9815-EABED82802A0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
