@@ -1,0 +1,48 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: ServerManage - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPDEB1.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/ServerManage.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\1、work\5、王禹\new\ServerManage\RvuRecv.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPDEB1.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPDEB2.tmp" with contents
+[
+/nologo /subsystem:console /incremental:yes /pdb:"Debug/ServerManage.pdb" /debug /machine:I386 /out:"Debug/ServerManage.exe" /pdbtype:sept 
+".\Debug\DataBaseExcute.obj"
+".\Debug\DVRPtz.obj"
+".\Debug\Rvu104Recv.obj"
+".\Debug\RvuRecv.obj"
+".\Debug\ServerManage.obj"
+".\Debug\StdAfx.obj"
+".\Debug\UpClient.obj"
+".\Debug\ParseXML.obj"
+".\Debug\tinystr.obj"
+".\Debug\tinyxml.obj"
+".\Debug\tinyxmlerror.obj"
+".\Debug\tinyxmlparser.obj"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPDEB2.tmp"
+<h3>Output Window</h3>
+Compiling...
+RvuRecv.cpp
+E:\1、work\5、王禹\new\ServerManage\RvuRecv.cpp(46) : warning C4101: 'l_byte' : unreferenced local variable
+E:\1、work\5、王禹\new\ServerManage\RvuRecv.cpp(45) : warning C4101: 't_pro' : unreferenced local variable
+E:\1、work\5、王禹\new\ServerManage\RvuRecv.cpp(53) : warning C4101: 'js_sys' : unreferenced local variable
+Linking...
+libcmtd.lib(crt0init.obj) : warning LNK4098: defaultlib "libcd.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
+Debug/ServerManage.exe : warning LNK4084: total image size 1037635584 exceeds max (268435456); image may not run
+
+
+
+<h3>Results</h3>
+ServerManage.exe - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>
