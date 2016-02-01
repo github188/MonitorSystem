@@ -2300,6 +2300,42 @@
 				>
 			</File>
 		</Filter>
+		<Filter
+			Name="Log"
+			>
+			<File
+				RelativePath=".\Log.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Log.h"
+				>
+			</File>
+			<File
+				RelativePath=".\LogManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\LogManager.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Singleton.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="CameraControl"
+			>
+			<File
+				RelativePath=".\CameraControl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\CameraControl.h"
+				>
+			</File>
+		</Filter>
 		<File
 			RelativePath=".\ReadMe.txt"
 			>

@@ -12,6 +12,8 @@ void ProcessRecvMessage(void* arg)
 	if (strXml == NULL||strlen(strXml) == 0||strlen(strXml) > 64*1024)
 		return;
 
+	DEBUG_LOG("recevive 接收到服务端传过来的报文数据：%s", strXml);
+
 	//获取命令类型
 	int nType = Acs_GetXmlTypeInfo(strXml);
 	if (!nType)

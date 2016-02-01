@@ -6,11 +6,10 @@
 int WaitTimeOut(CEvent *pEvent, int nTimeOut)
 {
 	//下面要等待告警订阅返回消息返回成功
-	DWORD dwReturn = WaitForSingleObject(pEvent, nTimeOut);
+	DWORD dwReturn = WaitForSingleObject(*pEvent, nTimeOut);
 	switch (dwReturn)
 	{
 	case WAIT_OBJECT_0:
-		//插入成功，则更新列表
 		return 0;
 		break;
 		//等待超时

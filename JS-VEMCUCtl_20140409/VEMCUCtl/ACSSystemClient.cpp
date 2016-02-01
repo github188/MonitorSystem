@@ -61,7 +61,7 @@ BOOL CACSSystemClient::ConnectServer(char *szRoutIp, int nRoutePort)
 	m_bConnectFlag = TRUE;
 
 	//连接成功后,开启一个线程处理服务端发过来的消息
-	ComDispatchTask(&g_AcsThreadPool,ProcessRecvMessage,NULL,0,0);
+	//ComDispatchTask(&g_AcsThreadPool,ProcessRecvMessage,NULL,0,0);
 
 	return TRUE;
 }
@@ -133,6 +133,8 @@ BOOL CACSSystemClient::SendLoginServerRequest(char *username,char *password,int 
 	int ret = ComSendNet(m_hClientTcpHandle,0,0,0,0,0,0,send_buf,sizeof(send_buf),0);
 	if (ret)
 		return FALSE;
+
+	DEBUG_LOG("send 给服务端发送登陆服务器命令数据：%s", send_buf);
 }
 
 BOOL CACSSystemClient::SendSubscribeAlarmRequest(int nUserId, int nStationId)
@@ -147,6 +149,8 @@ BOOL CACSSystemClient::SendSubscribeAlarmRequest(int nUserId, int nStationId)
 	int ret = ComSendNet(m_hClientTcpHandle,0,0,0,0,0,0,send_buf,sizeof(send_buf),0);
 	if (ret)
 		return FALSE;
+
+	DEBUG_LOG("send 给服务端发送告警订阅命令数据：%s", send_buf);
 }
 
 BOOL CACSSystemClient::SendCancelSubscribeAlarmRequest(int nUserId, int nStationId)
@@ -161,6 +165,8 @@ BOOL CACSSystemClient::SendCancelSubscribeAlarmRequest(int nUserId, int nStation
 	int ret = ComSendNet(m_hClientTcpHandle,0,0,0,0,0,0,send_buf,sizeof(send_buf),0);
 	if (ret)
 		return FALSE;
+
+	DEBUG_LOG("send 给服务端发送取消告警订阅命令数据：%s", send_buf);
 }
 
 //通知服务屏蔽某个设备
@@ -182,5 +188,7 @@ BOOL CACSSystemClient::SendHideDevRequest(int nUserId,int nDevId,int nAction)
 	int ret = ComSendNet(m_hClientTcpHandle,0,0,0,0,0,0,send_buf,sizeof(send_buf),0);
 	if (ret)
 		return FALSE;
+
+	DEBUG_LOG("send 给服务端发送屏蔽命令数据：%s", send_buf);
 
 }

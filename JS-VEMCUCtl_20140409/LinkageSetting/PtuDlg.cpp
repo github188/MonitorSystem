@@ -1307,7 +1307,7 @@ void CPtuDlg::InitStationList()
 	SetVolateClassStationToTree("110", hItem1);
 
 	//35kv
-	hItem1 = m_treeList.InsertItem("110kV变电站",7,7,hMainItem);
+	hItem1 = m_treeList.InsertItem("35kV变电站",7,7,hMainItem);
 	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
 	SetVolateClassStationToTree("35", hItem1);
 

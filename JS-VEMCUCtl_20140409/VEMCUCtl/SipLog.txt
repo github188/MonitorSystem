@@ -1,0 +1,18 @@
+00002240 02/01/16 17:25:09 STACK       : INFO  - Common version 1.0.00 (Release)
+00002240 02/01/16 17:25:09 STACK       : INFO  - OS=Win32 Generic
+00002240 02/01/16 17:25:09 STACK       : INFO  - Architecture=Little Endian, 32bit
+00002240 02/01/16 17:25:09 STACK       : INFO  - Stack - version 1.1.0.0 - Constructing...
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  - ================ Local Addresses ================
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  - - UDP Address: 0.0.0.0:6250
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  -           UDP expanded (1/4): 192.168.91.1:6250
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  -           UDP expanded (2/4): 192.168.33.1:6250
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  -           UDP expanded (3/4): 192.168.0.102:6250
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  -           UDP expanded (4/4): 127.0.0.1:6250
+00002240 02/01/16 17:25:09 TRANSPORT   : INFO  - ====================================================
+00002240 02/01/16 17:25:09 STACK       : INFO  - ConvertZeroAddrToRealAddr - local UDP address set as 192.168.91.1
+00002240 02/01/16 17:25:09 STACK       : INFO  - Stack - All modules were constructed successfully
+00002240 02/01/16 17:25:09 STACK       : INFO  - Stack - Version 1.1.0.0 - was constructed successfully
+00002240 02/01/16 17:25:09 STACK       : INFO  - Stack - stack handle: 0x1D08A180
+00002240 02/01/16 17:25:09 STACK       : INFO  - ***********************************************************************************
+00002240 02/01/16 17:25:09 CALL        : INFO  - SipCallLegMgrSetEvHandlers - Setting event handlers to call-leg mgr
+00002240 02/01/16 17:25:09 SUBSCRIPTIO : INFO  - QtSipSubsMgrSetEvHandlers - Setting event handlers to subscription mgr

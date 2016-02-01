@@ -229,8 +229,8 @@ void CACSSystemDlg::InitStationList()
 
 	char sql_buf[1024]={0x0};
 
-	MYSQL_RES	* res;
-	MYSQL_ROW	row;
+	MYSQL_RES* res;
+	MYSQL_ROW row;
 
 	int rnum = 0;
 	sprintf_s(sql_buf, "%s","SHOW TABLES LIKE 'ob_d5000_station'");
@@ -247,61 +247,78 @@ void CACSSystemDlg::InitStationList()
 		return ;
 	}
 
-	HTREEITEM	hMainItem = NULL;
+	HTREEITEM hMainItem = NULL;
+	HTREEITEM hItem1 = NULL;
 	hMainItem = m_treeStation.InsertItem("江苏省电力公司", 1, 1, TVI_ROOT, NULL);
 	SetStationNodeInfo(hMainItem,-1,NULL,NULL,0,0);
-	//站端
-	HTREEITEM hItem1 = NULL,hItem2 = NULL,hItem3 = NULL,hStationItem = NULL;
-	char station_code[32]={0x0};
-	char station_name[64]={0x0};
+
+
+	//1000KV
+	hItem1 = m_treeStation.InsertItem("1000KV变电站",7,7,hMainItem);
+	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
+	SetVolateClassStationToTree("1000", hItem1);
+
 	//500kV
 	hItem1 = m_treeStation.InsertItem("500kV变电站",7,7,hMainItem);
 	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
-	sprintf_s(sql_buf,"%s","SELECT station_id,station_name_videoplant,station_code_videoplant FROM ob_d5000_station "
-		"where voltage_class = 500");
-	if (!mysql_query(&mysql_cameralist,sql_buf))
-	{
-		res = mysql_store_result(&mysql_cameralist);
-		while (row = mysql_fetch_row(res))
-		{
-			hItem2 = m_treeStation.InsertItem(row[1],8,8,hItem1);
-			SetStationNodeInfo(hItem2,atoi(row[0]),row[2],row[1],2,0);
-		}
-		mysql_free_result(res);
-	}
+	SetVolateClassStationToTree("500", hItem1);
 
 	//220kV
 	hItem1 = m_treeStation.InsertItem("220kV变电站",7,7,hMainItem);
 	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
-	sprintf_s(sql_buf,"%s","SELECT station_id,station_name_videoplant,station_code_videoplant FROM ob_d5000_station "
-		"where voltage_class = 220");
-	if (!mysql_query(&mysql_cameralist,sql_buf))
-	{
-		res = mysql_store_result(&mysql_cameralist);
-		while (row = mysql_fetch_row(res))
-		{
-			hItem2 = m_treeStation.InsertItem(row[1],8,8,hItem1);
-			SetStationNodeInfo(hItem2,atoi(row[0]),row[2],row[1],2,0);
-		}
-		mysql_free_result(res);
-	}
+	SetVolateClassStationToTree("220", hItem1);
 
 	//110kV
 	hItem1 = m_treeStation.InsertItem("110kV变电站",7,7,hMainItem);
 	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
-	sprintf_s(sql_buf,"%s","SELECT station_id,station_name_videoplant,station_code_videoplant FROM ob_d5000_station "
-		"where voltage_class = 110");
+	SetVolateClassStationToTree("110", hItem1);
+
+	//35kv
+	hItem1 = m_treeStation.InsertItem("35kV变电站",7,7,hMainItem);
+	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
+	SetVolateClassStationToTree("35", hItem1);
+
+	//其它
+	hItem1 = m_treeStation.InsertItem("其他",7,7,hMainItem);
+	SetStationNodeInfo(hItem1,-1,NULL,NULL,1,0);
+	SetVolateClassStationToTree("", hItem1);
+}
+
+//获取变电站树节点显示文本，如果变电站绑定了rvu，则增加已绑定字符串
+CString CACSSystemDlg::GetStationTreeShowText(int nFlag, CString strStationName)
+{
+	CString returnText;
+	if (nFlag == 0)
+		returnText.Format("%s", strStationName);
+	else
+		returnText.Format("%s(已绑定)", strStationName);
+
+	return returnText;
+}
+
+//获取某个电压等级下的变电站，添加到tree下
+void CACSSystemDlg::SetVolateClassStationToTree(char* szVolClass, HTREEITEM hItem)
+{
+	CString strStationName = "";
+	MYSQL_RES* res;
+	MYSQL_ROW row;
+	HTREEITEM hItemChild;
+	char sql_buf[1024] = {0};
+	sprintf_s(sql_buf,"SELECT a.station_id,a.station_name_videoplant,a.station_code_videoplant,IFNULL(b.rvu_id,0) FROM ob_d5000_station as a"
+		" left join ass_rvu as b on a.station_id=b.station_id where a.voltage_class = '%s'", szVolClass);
 	if (!mysql_query(&mysql_cameralist,sql_buf))
 	{
 		res = mysql_store_result(&mysql_cameralist);
 		while (row = mysql_fetch_row(res))
 		{
-			hItem2 = m_treeStation.InsertItem(row[1],8,8,hItem1);
-			SetStationNodeInfo(hItem2,atoi(row[0]),row[2],row[1],2,0);
+			//如果变电站绑定了rvu，增加(已绑定）字符串
+			strStationName = GetStationTreeShowText(atoi(row[3]), row[1]);
+
+			hItemChild = m_treeStation.InsertItem(strStationName, 8, 8, hItem);
+			SetStationNodeInfo(hItemChild,atoi(row[0]), row[2], row[1], 2, 0);
 		}
 		mysql_free_result(res);
 	}
-	//平台
 }
 
 void CACSSystemDlg::SetStationNodeInfo(HTREEITEM hItem,int station_id,char* station_code,char* station_name,int node_type,int connect_state)

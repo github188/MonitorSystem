@@ -429,7 +429,7 @@ void CDlgAlarmSubscribe::OnBnClickedButtonAlarmSubscribeOk()
 		g_pACSClient->SendSubscribeAlarmRequest(nUserId,nStationId);
 
 		//下面要等待告警订阅返回消息返回成功
-		if (!WaitTimeOut(&g_CommonEvent, 2*1000))
+		if (!WaitTimeOut(&g_CommonEvent, 2*1000*1000))
 		{
 			InitAlarmSubscribeList();
 		}

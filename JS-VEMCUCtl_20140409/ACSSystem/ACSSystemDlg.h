@@ -92,6 +92,8 @@ public:
 	afx_msg void OnClickACSSystemDlgCloseVideo();
 	void CloseCamera(int nID);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+	CString GetStationTreeShowText(int nFlag, CString strStationName);
+	void SetVolateClassStationToTree(char* szVolClass, HTREEITEM hItem);
 };
 
 extern CACSSystemDlg* g_pMainDlg;

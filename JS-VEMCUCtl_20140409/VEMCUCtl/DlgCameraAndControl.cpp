@@ -346,6 +346,7 @@ void CDlgCameraAndControl::CloseCamera(int nID)
 	if (m_pViewChannel->m_video_opened)
 	{
 		nRet = AssCloseCamera(nID);
+		Sleep(1000);
 		m_pViewChannel->Invalidate();
 	}
 	 

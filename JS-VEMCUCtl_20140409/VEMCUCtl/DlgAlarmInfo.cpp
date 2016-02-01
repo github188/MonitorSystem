@@ -353,7 +353,7 @@ void CDlgAlarmInfo::InitRealAlarmInfoList()
 	CTime time = CTime::GetCurrentTime();
 	int nYear = time.GetYear();
 
-	sprintf_s(sql_buf,"select a.rvu_id,a.dev_id,a.start_time,a.alarm_level,a.type,a.process_status,b.station_id,c.name,c.relation_video_status,d.station_name_videoplant,a.id from ass_alarm_%d a" 
+	sprintf_s(sql_buf,"select a.rvu_id,a.dev_id,a.start_time,a.alarm_level,a.type,a.process_status,b.station_id,IFNULL(c.name,''),IFNULL(c.relation_video_status,0),d.station_name_videoplant,a.id from ass_alarm_%d a" 
 		" left join ass_rvu b on a.rvu_id=b.rvu_id" 
 		" left join ass_rvu_sm c on a.dev_id=c.id" 
 		" left join ob_d5000_station d on b.station_id=d.station_id" 
